@@ -8,9 +8,9 @@ enum Theme {
 
     // MARK: - Accents
     static let primary = Color(red: 0.176, green: 0.831, blue: 0.749)          // #2dd4bf (teal)
-    static let consumed = Color(red: 0.984, green: 0.420, blue: 0.522)         // #fb7185 (coral)
-    static let positive = Color(red: 0.290, green: 0.855, blue: 0.502)         // #4ade80 (green)
-    static let warning = Color(red: 0.984, green: 0.749, blue: 0.145)          // #fbbf24 (amber)
+    static let consumed = Color(red: 0.984, green: 0.443, blue: 0.522)         // #fb7185 (coral)
+    static let positive = Color(red: 0.290, green: 0.871, blue: 0.502)         // #4ade80 (green)
+    static let warning = Color(red: 0.984, green: 0.749, blue: 0.141)          // #fbbf24 (amber)
 
     // MARK: - Text
     static let textPrimary = Color(red: 0.941, green: 0.941, blue: 0.941)      // #f0f0f0
