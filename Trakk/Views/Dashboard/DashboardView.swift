@@ -97,18 +97,14 @@ struct DashboardView: View {
             }
             // Sheet destinations
             .sheet(isPresented: $showChat) {
-                Text("Task 10 — Claude Chat Sheet")
-                    .font(Theme.titleFont)
-                    .foregroundColor(Theme.textPrimary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.background.ignoresSafeArea())
+                ChatSheetView()
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showTextLog) {
-                Text("Task 10 — Text Food Log")
-                    .font(Theme.titleFont)
-                    .foregroundColor(Theme.textPrimary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.background.ignoresSafeArea())
+                ChatSheetView()
+                    .presentationDetents([.medium, .large])
+                    .presentationDragIndicator(.visible)
             }
             // Full-screen cover
             .fullScreenCover(isPresented: $showBarcodeScanner) {
