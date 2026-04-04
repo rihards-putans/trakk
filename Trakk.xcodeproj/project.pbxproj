@@ -26,7 +26,9 @@
 		7C987B252FB7AE09BDCE2675 /* HealthKitPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1D28DFF51655C274CE7D5 /* HealthKitPermissionView.swift */; };
 		7D6F1E54AE89122D7E887889 /* CoachInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911456143FCCED798682800 /* CoachInsightView.swift */; };
 		82A89EE5A02D471CFAFE7A24 /* ClaudeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBBAE6782B82DEE87F1287 /* ClaudeAPIService.swift */; };
+		834D61E3FFF59F664DBD9658 /* FoodLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */; };
 		836B6FB50F32C8EF3B089FB0 /* TrakkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8658CD4014D57E30CF11DE /* TrakkApp.swift */; };
+		8E0036F5DD8C8919ABE47ECD /* FoodLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A23CF8D057495387E46A40F /* FoodLogView.swift */; };
 		91E872E843846A3E2AF2CFAB /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1103A3827AA28D1F36C0C4 /* NotificationService.swift */; };
 		93DE72E32045EBA124E653E3 /* FoodConfirmationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B46027BE8F7286DBAF86D /* FoodConfirmationCard.swift */; };
 		9CCDB9E502290DC9B471B6CA /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685B84681649595AB87B1DD0 /* OnboardingViewModel.swift */; };
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A23CF8D057495387E46A40F /* FoodLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogView.swift; sourceTree = "<group>"; };
 		1052FD9A5AD7126717C0BD2B /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		25A2F511D5707241B14C454B /* Trakk.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Trakk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29156DEC651390198FAF4B26 /* FABView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FABView.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		B35CA8C120E4C459903C709D /* NotificationSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSetupView.swift; sourceTree = "<group>"; };
 		B37777307DBB1989D36D476F /* ChatSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSheetView.swift; sourceTree = "<group>"; };
 		CA6D7169BDE0BE52685D52A3 /* NotificationPreferences+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationPreferences+Ext.swift"; sourceTree = "<group>"; };
+		CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogViewModel.swift; sourceTree = "<group>"; };
 		D672FE6332230852029E7DF5 /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
 		DE8658CD4014D57E30CF11DE /* TrakkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrakkApp.swift; sourceTree = "<group>"; };
 		E1C6195D22D75305A7EF13BD /* FoodLogPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogPreviewView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				67F7EDE030A428A936C0D4C3 /* FoodEntryRow.swift */,
+				0A23CF8D057495387E46A40F /* FoodLogView.swift */,
 			);
 			path = FoodLog;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			children = (
 				1052FD9A5AD7126717C0BD2B /* ChatViewModel.swift */,
 				956D90280EFB31F810A65FCC /* DashboardViewModel.swift */,
+				CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */,
 				685B84681649595AB87B1DD0 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModels;
@@ -350,6 +356,8 @@
 				290B916E2B2B5EFDD7FDF5AA /* FoodEntry+Extensions.swift in Sources */,
 				4AF0C1E2CFA4A400668AA972 /* FoodEntryRow.swift in Sources */,
 				E9C0C19FAC2ED543CB924405 /* FoodLogPreviewView.swift in Sources */,
+				8E0036F5DD8C8919ABE47ECD /* FoodLogView.swift in Sources */,
+				834D61E3FFF59F664DBD9658 /* FoodLogViewModel.swift in Sources */,
 				7C987B252FB7AE09BDCE2675 /* HealthKitPermissionView.swift in Sources */,
 				A7FFA54C9269B39F9ED05D0E /* HealthKitService.swift in Sources */,
 				4E4BCCBB10CA9651150C8954 /* KeychainService.swift in Sources */,
