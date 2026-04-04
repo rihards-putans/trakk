@@ -81,11 +81,7 @@ struct DashboardView: View {
                 WeightHistoryView()
             }
             .navigationDestination(isPresented: $showSettings) {
-                Text("Task 14 — Settings View")
-                    .font(Theme.titleFont)
-                    .foregroundColor(Theme.textPrimary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.background.ignoresSafeArea())
+                SettingsView()
             }
             // Sheet destinations
             .sheet(isPresented: $showChat) {
