@@ -23,6 +23,7 @@
 		6CF5C911283BB63CF5763F83 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DE244F65DB5B0C1D8A498F /* CoreDataService.swift */; };
 		7274C0239D36242081E7E9D1 /* OnboardingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836CDD5888522BA946ACFBCB /* OnboardingContainerView.swift */; };
 		771492EA7893B384A8E8434E /* ChatSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37777307DBB1989D36D476F /* ChatSheetView.swift */; };
+		79C84FE96433D5731B639671 /* WeightHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E2A5FF350CE4A151094BB /* WeightHistoryViewModel.swift */; };
 		7C987B252FB7AE09BDCE2675 /* HealthKitPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1D28DFF51655C274CE7D5 /* HealthKitPermissionView.swift */; };
 		7D6F1E54AE89122D7E887889 /* CoachInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911456143FCCED798682800 /* CoachInsightView.swift */; };
 		82A89EE5A02D471CFAFE7A24 /* ClaudeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBBAE6782B82DEE87F1287 /* ClaudeAPIService.swift */; };
@@ -40,6 +41,7 @@
 		D7A95BB4797DC385582E05E7 /* ChatMessage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC21106060371CE615BC01F /* ChatMessage+Extensions.swift */; };
 		D8C6DD35036AD3A1BA0C0AC2 /* MetricCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F919CD3B269053D2B32AD4DD /* MetricCardsView.swift */; };
 		DA5B45F5D1B176832E371000 /* APIKeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E787D69B740259FA7CE6B26 /* APIKeyInputView.swift */; };
+		DCFC1898B044436D8D3C036B /* WeightHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64201E1A648C7A69F4734D3E /* WeightHistoryView.swift */; };
 		E2E23D366F06C408AD759558 /* ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43658A1036AA91AA3CE5758F /* ChatBubbleView.swift */; };
 		E9C0C19FAC2ED543CB924405 /* FoodLogPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C6195D22D75305A7EF13BD /* FoodLogPreviewView.swift */; };
 		EC4C2001FE194A8CD97390DD /* CalorieRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412E364CC6C4A936E148455C /* CalorieRingView.swift */; };
@@ -71,6 +73,7 @@
 		50CDF1CDB0543EF50455FE5E /* OpenFoodFactsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsServiceTests.swift; sourceTree = "<group>"; };
 		53B8FD5C7B881A94A8A64320 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		5E787D69B740259FA7CE6B26 /* APIKeyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyInputView.swift; sourceTree = "<group>"; };
+		64201E1A648C7A69F4734D3E /* WeightHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryView.swift; sourceTree = "<group>"; };
 		65DE244F65DB5B0C1D8A498F /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		67F7EDE030A428A936C0D4C3 /* FoodEntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodEntryRow.swift; sourceTree = "<group>"; };
 		685B84681649595AB87B1DD0 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		956D90280EFB31F810A65FCC /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
 		97091C65F51123A59E43D793 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		97EBBAE6782B82DEE87F1287 /* ClaudeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeAPIService.swift; sourceTree = "<group>"; };
+		990E2A5FF350CE4A151094BB /* WeightHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightHistoryViewModel.swift; sourceTree = "<group>"; };
 		9911456143FCCED798682800 /* CoachInsightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachInsightView.swift; sourceTree = "<group>"; };
 		99704A8697961883B9A8D289 /* UserProfile+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Extensions.swift"; sourceTree = "<group>"; };
 		9E572AD9A251597DA3D6FE9F /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
@@ -198,6 +202,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		B9B3D64A4DD12E25D396EC06 /* WeightHistory */ = {
+			isa = PBXGroup;
+			children = (
+				64201E1A648C7A69F4734D3E /* WeightHistoryView.swift */,
+			);
+			path = WeightHistory;
+			sourceTree = "<group>";
+		};
 		C3F674AFB3F69D714180C039 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,6 +247,7 @@
 				956D90280EFB31F810A65FCC /* DashboardViewModel.swift */,
 				CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */,
 				685B84681649595AB87B1DD0 /* OnboardingViewModel.swift */,
+				990E2A5FF350CE4A151094BB /* WeightHistoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,6 +269,7 @@
 				7307CD32C7B44615F0014157 /* Dashboard */,
 				471229FA758E6FCD7BC3620D /* FoodLog */,
 				B90D25073620F2D8DC156970 /* Onboarding */,
+				B9B3D64A4DD12E25D396EC06 /* WeightHistory */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,6 +387,8 @@
 				6625941FBF2412D7259F45C9 /* Theme.swift in Sources */,
 				836B6FB50F32C8EF3B089FB0 /* TrakkApp.swift in Sources */,
 				FBB6AEFBD16C795683010063 /* UserProfile+Extensions.swift in Sources */,
+				DCFC1898B044436D8D3C036B /* WeightHistoryView.swift in Sources */,
+				79C84FE96433D5731B639671 /* WeightHistoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

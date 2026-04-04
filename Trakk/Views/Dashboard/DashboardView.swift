@@ -78,11 +78,7 @@ struct DashboardView: View {
                 FoodLogView()
             }
             .navigationDestination(isPresented: $showWeightHistory) {
-                Text("Task 12 — Weight History View")
-                    .font(Theme.titleFont)
-                    .foregroundColor(Theme.textPrimary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.background.ignoresSafeArea())
+                WeightHistoryView()
             }
             .navigationDestination(isPresented: $showSettings) {
                 Text("Task 14 — Settings View")
