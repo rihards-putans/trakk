@@ -100,11 +100,7 @@ struct DashboardView: View {
             }
             // Full-screen cover
             .fullScreenCover(isPresented: $showBarcodeScanner) {
-                Text("Task 13 — Barcode Scanner")
-                    .font(Theme.titleFont)
-                    .foregroundColor(Theme.textPrimary)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Theme.background.ignoresSafeArea())
+                BarcodeScannerView()
             }
         }
         .task {
