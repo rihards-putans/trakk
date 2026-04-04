@@ -1,0 +1,39 @@
+name: Trakk
+options:
+  bundleIdPrefix: com.trakk
+  deploymentTarget:
+    iOS: "17.0"
+  xcodeVersion: "16.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: ""
+targets:
+  Trakk:
+    type: application
+    platform: iOS
+    sources:
+      - path: Trakk
+    resources:
+      - path: Trakk/Resources
+    settings:
+      base:
+        INFOPLIST_FILE: Trakk/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.trakk.app
+    entitlements:
+      path: Trakk/Trakk.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access:
+          - health-records
+  TrakkTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: TrakkTests
+    dependencies:
+      - target: Trakk
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.trakk.app.tests
