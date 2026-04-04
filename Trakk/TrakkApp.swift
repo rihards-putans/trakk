@@ -11,9 +11,7 @@ struct TrakkApp: App {
                 Theme.background.ignoresSafeArea()
 
                 if isOnboardingComplete {
-                    Text("Dashboard coming soon")
-                        .font(Theme.titleFont)
-                        .foregroundColor(Theme.textPrimary)
+                    DashboardView()
                 } else {
                     OnboardingContainerView(isOnboardingComplete: $isOnboardingComplete)
                 }
