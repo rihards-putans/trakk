@@ -1,0 +1,41 @@
+examples:
+  - id: morning_empty
+    inputs: {clock_time: "08:00", workout: "rest day", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 3, todayBurned: 0}
+  - id: morning_trained_today
+    inputs: {clock_time: "08:00", workout: "trained today", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 2, todayBurned: 420}
+  - id: morning_trained_yesterday
+    inputs: {clock_time: "08:00", workout: "trained yesterday — today is recovery", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+  - id: midday_underspent
+    inputs: {clock_time: "13:00", workout: "trained today", todayEaten: 600, calorieTarget: 2000, todayProtein: 40, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 3, todayBurned: 380}
+  - id: midday_on_target
+    inputs: {clock_time: "13:00", workout: "rest day", todayEaten: 900, calorieTarget: 1800, todayProtein: 55, proteinTarget: 140, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
+  - id: midday_over
+    inputs: {clock_time: "13:00", workout: "rest day", todayEaten: 1700, calorieTarget: 1800, todayProtein: 90, proteinTarget: 140, currentWeight: 78.9, goalWeight: 71, streak: 0, todayBurned: 0}
+  - id: afternoon_deep_deficit
+    inputs: {clock_time: "16:00", workout: "trained today", todayEaten: 400, calorieTarget: 2200, todayProtein: 30, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 7, todayBurned: 500}
+  - id: afternoon_low_protein
+    inputs: {clock_time: "16:00", workout: "rest day", todayEaten: 1400, calorieTarget: 2000, todayProtein: 45, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 2, todayBurned: 0}
+  - id: evening_on_target
+    inputs: {clock_time: "19:00", workout: "trained yesterday — today is recovery", todayEaten: 1800, calorieTarget: 2000, todayProtein: 130, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 6, todayBurned: 0}
+  - id: evening_hit_goal_exactly
+    inputs: {clock_time: "20:00", workout: "rest day", todayEaten: 2000, calorieTarget: 2000, todayProtein: 150, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 8, todayBurned: 0}
+  - id: evening_just_logged_food
+    inputs: {clock_time: "19:30", workout: "trained today", todayEaten: 1650, calorieTarget: 2200, todayProtein: 110, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 3, todayBurned: 440}
+  - id: late_evening_still_low
+    inputs: {clock_time: "21:30", workout: "rest day", todayEaten: 1200, calorieTarget: 2000, todayProtein: 70, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+  - id: late_night_zero_food
+    inputs: {clock_time: "23:30", workout: "rest day", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+  - id: late_night_on_target
+    inputs: {clock_time: "23:00", workout: "trained today", todayEaten: 1900, calorieTarget: 2000, todayProtein: 140, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 6, todayBurned: 420}
+  - id: late_night_low_protein_temptation
+    inputs: {clock_time: "22:30", workout: "trained today", todayEaten: 1700, calorieTarget: 2200, todayProtein: 60, proteinTarget: 160, currentWeight: 78.9, goalWeight: 71, streak: 3, todayBurned: 500}
+  - id: early_morning_rollover
+    inputs: {clock_time: "00:30", workout: "rest day", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
+  - id: afternoon_full_protein
+    inputs: {clock_time: "14:00", workout: "trained today", todayEaten: 1100, calorieTarget: 2000, todayProtein: 150, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 480}
+  - id: morning_broke_streak
+    inputs: {clock_time: "08:30", workout: "rest day", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 79.1, goalWeight: 71, streak: 0, todayBurned: 0}
+  - id: evening_over_plus_trained
+    inputs: {clock_time: "18:00", workout: "trained today", todayEaten: 2300, calorieTarget: 2200, todayProtein: 160, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 480}
+  - id: midday_on_goal_rest
+    inputs: {clock_time: "12:30", workout: "rest day", todayEaten: 800, calorieTarget: 1800, todayProtein: 65, proteinTarget: 140, currentWeight: 78.9, goalWeight: 71, streak: 9, todayBurned: 0}

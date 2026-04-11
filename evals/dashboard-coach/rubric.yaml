@@ -1,0 +1,24 @@
+pipeline_name: trakk-dashboard-coach
+target_score: 7.5
+dimensions:
+  - id: hard_rule
+    type: gate
+    description: >
+      HARD RULE binary. No food recommendations (eat, dinner, snack, protein shake, anything) when the
+      eval input's clock_time is between 22:00 and 05:00. Future-tense advice ("tomorrow, aim for…") is
+      allowed. Any present or near-term eating suggestion in the late-night window is a fail.
+
+  - id: numerical_accuracy
+    type: gate
+    description: >
+      Every number mentioned in the output MUST match the eval input exactly. If the output says
+      "your 2000 kcal target" the input must have calorieTarget == 2000. Hallucinated targets,
+      calories, weights, or protein counts are a fail.
+
+  - id: signal_value
+    type: score
+    range: [0, 10]
+    description: >
+      Does the output tell the user something they cannot already see on the dashboard? 0 = pure
+      restatement ("you're on the path to 70kg"). 5 = accurate but unsurprising. 9-10 = specific
+      observation that ties time + workout + food state together into a concrete next action.
