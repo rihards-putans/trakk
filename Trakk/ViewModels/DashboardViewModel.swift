@@ -57,27 +57,71 @@ final class DashboardViewModel: ObservableObject {
     // to Resources/dashboard-coach-prompt.txt so a swap doesn't change behavior.
     private static let fallbackCoachPrompt = "You are Trakk, a concise weight-loss coach. Respond in English only. Keep responses to exactly 2 sentences. Refer to the user's goal weight directly (e.g. 'your 71kg goal'), never as a loss amount (e.g. avoid 'your 8kg goal'). HARD RULE: Never recommend eating any food (no dinner, snacks, protein, anything) between 22:00 and 05:00 — the user is winding down for sleep or already asleep."
 
-    static func loadCoachPrompt() -> String {
+    static let dashboardCoachPrompt: String = {
         guard let url = Bundle.main.url(forResource: "dashboard-coach-prompt", withExtension: "txt"),
               let text = try? String(contentsOf: url, encoding: .utf8) else {
             return fallbackCoachPrompt
         }
         return text.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
+    }()
 
     func loadCoachInsight() async {
         isLoadingInsight = true
         defer { isLoadingInsight = false }
 
         let profile = coreData.getOrCreateUserProfile()
-        let systemPrompt = Self.loadCoachPrompt()
         let userContent = buildInsightPrompt(profile: profile)
+        let previousOutput = coachInsight
 
         do {
-            let response = try await claude.sendMessage(userContent: userContent, systemPrompt: systemPrompt)
-            coachInsight = response.trimmingCharacters(in: .whitespacesAndNewlines)
+            let response = try await claude.sendMessage(
+                userContent: userContent,
+                systemPrompt: Self.dashboardCoachPrompt
+            )
+            let newOutput = response.trimmingCharacters(in: .whitespacesAndNewlines)
+            coachInsight = newOutput
+
+            let inputs: [String: Any] = [
+                "clockTime": Self.currentClockString(),
+                "workout": workoutContextString(),
+                "todayEaten": todayEaten,
+                "calorieTarget": calorieTarget,
+                "todayProtein": todayProtein,
+                "proteinTarget": proteinTarget,
+                "streak": streak,
+                "todayBurned": todayBurned,
+                "currentWeight": currentWeight ?? 0,
+                "goalWeight": profile.goalWeight,
+            ]
+            CoachOutcomeTracker.shared.insightRegenerated(
+                previousOutput: previousOutput,
+                newOutput: newOutput
+            )
+            let insightId = CoachInsightLog.append(
+                prompt: Self.dashboardCoachPrompt,
+                inputs: inputs,
+                output: newOutput
+            )
+            CoachOutcomeTracker.shared.startTracking(insightId: insightId)
         } catch {
             coachInsight = "Keep logging your meals consistently — small habits lead to big results. Stay on track today!"
+        }
+    }
+
+    private static func currentClockString() -> String {
+        let now = Date()
+        let cal = Calendar.current
+        return String(format: "%02d:%02d", cal.component(.hour, from: now), cal.component(.minute, from: now))
+    }
+
+    private func workoutContextString() -> String {
+        guard let last = lastWorkoutDate else { return "no recent workouts logged" }
+        let cal = Calendar.current
+        let days = cal.dateComponents([.day], from: cal.startOfDay(for: last), to: cal.startOfDay(for: Date())).day ?? 0
+        switch days {
+        case 0: return "trained today"
+        case 1: return "trained yesterday — today is recovery"
+        default: return "last workout \(days) days ago"
         }
     }
 
