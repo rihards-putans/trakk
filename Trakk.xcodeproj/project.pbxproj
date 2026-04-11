@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082613DD233C9A81F6DB0398 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E6E6C756990DC9071C5D90 /* Assets.xcassets */; };
+		29A2349B0F040B359A9DEF59 /* dashboard-coach-prompt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8B1C2EE6B2776282F1AF172C /* dashboard-coach-prompt.txt */; };
 		07F5495A64F4739AD9C2FF26 /* KeychainServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95677EADA593C5672A41724F /* KeychainServiceTests.swift */; };
+		D5E6F789A0B1C2D3E4F56789 /* CustomProduct+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D5E6F789A0B1C2D3E4F567 /* CustomProduct+Extensions.swift */; };
+		A1B2C3D4E5F60001ABCD0001 /* TrainingDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60001ABCD0002 /* TrainingDayView.swift */; };
+		B1C2D3E4F5A60001ABCD0001 /* CalorieHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A60001ABCD0002 /* CalorieHistoryView.swift */; };
+		B1C2D3E4F5A60002ABCD0001 /* CalorieHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A60002ABCD0002 /* CalorieHistoryViewModel.swift */; };
+		B1C2D3E4F5A60003ABCD0001 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A60003ABCD0002 /* SOSView.swift */; };
+		B1C2D3E4F5A60004ABCD0001 /* SOSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A60004ABCD0002 /* SOSViewModel.swift */; };
 		0E80ECAFBB18692D8E96A132 /* ProductResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2021CCE0FCA13506041EEE51 /* ProductResultView.swift */; };
 		0EE88995EAE6E68A679CAC2D /* ClaudeAPIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F1DE0338A4686FD4C100C8 /* ClaudeAPIServiceTests.swift */; };
 		11152D0EE81373EB5EBB960A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C08AA00AF2A7BD54C8C91 /* SettingsView.swift */; };
@@ -102,6 +110,7 @@
 		B1F1DE0338A4686FD4C100C8 /* ClaudeAPIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeAPIServiceTests.swift; sourceTree = "<group>"; };
 		B35CA8C120E4C459903C709D /* NotificationSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSetupView.swift; sourceTree = "<group>"; };
 		B37777307DBB1989D36D476F /* ChatSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSheetView.swift; sourceTree = "<group>"; };
+		C4D5E6F789A0B1C2D3E4F567 /* CustomProduct+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomProduct+Extensions.swift"; sourceTree = "<group>"; };
 		CA6D7169BDE0BE52685D52A3 /* NotificationPreferences+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationPreferences+Ext.swift"; sourceTree = "<group>"; };
 		CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodLogViewModel.swift; sourceTree = "<group>"; };
 		D672FE6332230852029E7DF5 /* OpenFoodFactsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFoodFactsService.swift; sourceTree = "<group>"; };
@@ -111,13 +120,22 @@
 		F154DAC65FC133A14D55661F /* BarcodeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerViewModel.swift; sourceTree = "<group>"; };
 		F632625D481DD4702E114B95 /* SparklineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklineView.swift; sourceTree = "<group>"; };
 		F919CD3B269053D2B32AD4DD /* MetricCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCardsView.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60001ABCD0002 /* TrainingDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingDayView.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5A60001ABCD0002 /* CalorieHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieHistoryView.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5A60002ABCD0002 /* CalorieHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieHistoryViewModel.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5A60003ABCD0002 /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
+		B1C2D3E4F5A60004ABCD0002 /* SOSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewModel.swift; sourceTree = "<group>"; };
 		FA7792A0B728AF26D150684A /* Trakk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Trakk.entitlements; sourceTree = "<group>"; };
+		78E6E6C756990DC9071C5D90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8B1C2EE6B2776282F1AF172C /* dashboard-coach-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "dashboard-coach-prompt.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		29871DA0C4EB10EADF930E6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				78E6E6C756990DC9071C5D90 /* Assets.xcassets */,
+				8B1C2EE6B2776282F1AF172C /* dashboard-coach-prompt.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -126,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2FC21106060371CE615BC01F /* ChatMessage+Extensions.swift */,
+				C4D5E6F789A0B1C2D3E4F567 /* CustomProduct+Extensions.swift */,
 				ED91B33328E66BAE1C1F3275 /* FoodEntry+Extensions.swift */,
 				CA6D7169BDE0BE52685D52A3 /* NotificationPreferences+Ext.swift */,
 				99704A8697961883B9A8D289 /* UserProfile+Extensions.swift */,
@@ -146,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				29156DEC651390198FAF4B26 /* FABView.swift */,
+				B1C2D3E4F5A60003ABCD0002 /* SOSView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -153,12 +173,14 @@
 		7307CD32C7B44615F0014157 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				B1C2D3E4F5A60001ABCD0002 /* CalorieHistoryView.swift */,
 				412E364CC6C4A936E148455C /* CalorieRingView.swift */,
 				9911456143FCCED798682800 /* CoachInsightView.swift */,
 				97091C65F51123A59E43D793 /* DashboardView.swift */,
 				E1C6195D22D75305A7EF13BD /* FoodLogPreviewView.swift */,
 				F919CD3B269053D2B32AD4DD /* MetricCardsView.swift */,
 				F632625D481DD4702E114B95 /* SparklineView.swift */,
+				A1B2C3D4E5F60001ABCD0002 /* TrainingDayView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -271,11 +293,13 @@
 			isa = PBXGroup;
 			children = (
 				F154DAC65FC133A14D55661F /* BarcodeScannerViewModel.swift */,
+				B1C2D3E4F5A60002ABCD0002 /* CalorieHistoryViewModel.swift */,
 				1052FD9A5AD7126717C0BD2B /* ChatViewModel.swift */,
 				956D90280EFB31F810A65FCC /* DashboardViewModel.swift */,
 				CD856B1CFA71BDF50A26B68D /* FoodLogViewModel.swift */,
 				685B84681649595AB87B1DD0 /* OnboardingViewModel.swift */,
 				A8E0AC7ED3F50F3C452EC288 /* SettingsViewModel.swift */,
+				B1C2D3E4F5A60004ABCD0002 /* SOSViewModel.swift */,
 				990E2A5FF350CE4A151094BB /* WeightHistoryViewModel.swift */,
 			);
 			path = ViewModels;
@@ -331,6 +355,7 @@
 			buildConfigurationList = DDDDBBEDF0ACF2AAB8796568 /* Build configuration list for PBXNativeTarget "Trakk" */;
 			buildPhases = (
 				4DD0AA50D942319F642EB371 /* Sources */,
+				887DBBABABAF4FF3D2ADA664 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -353,10 +378,12 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					77A5E32B40204737F06CF45D = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = RNTXS35JU6;
+						ProvisioningStyle = Automatic;
 					};
 					81C4B4E51B5F7FBA0AFFF90D = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = RNTXS35JU6;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -396,6 +423,7 @@
 				82A89EE5A02D471CFAFE7A24 /* ClaudeAPIService.swift in Sources */,
 				7D6F1E54AE89122D7E887889 /* CoachInsightView.swift in Sources */,
 				6CF5C911283BB63CF5763F83 /* CoreDataService.swift in Sources */,
+				D5E6F789A0B1C2D3E4F56789 /* CustomProduct+Extensions.swift in Sources */,
 				6475054A6DCAC2FFFFA89BFC /* DashboardView.swift in Sources */,
 				28519D90171B8724022A3C0E /* DashboardViewModel.swift in Sources */,
 				49F5737F7081AE84A59CFFEA /* FABView.swift in Sources */,
@@ -421,6 +449,11 @@
 				2C3D5C55533B882D01B261CD /* SparklineView.swift in Sources */,
 				BE5C0E4EC77587DB953D9C27 /* StatsInputView.swift in Sources */,
 				6625941FBF2412D7259F45C9 /* Theme.swift in Sources */,
+				A1B2C3D4E5F60001ABCD0001 /* TrainingDayView.swift in Sources */,
+				B1C2D3E4F5A60001ABCD0001 /* CalorieHistoryView.swift in Sources */,
+				B1C2D3E4F5A60002ABCD0001 /* CalorieHistoryViewModel.swift in Sources */,
+				B1C2D3E4F5A60003ABCD0001 /* SOSView.swift in Sources */,
+				B1C2D3E4F5A60004ABCD0001 /* SOSViewModel.swift in Sources */,
 				836B6FB50F32C8EF3B089FB0 /* TrakkApp.swift in Sources */,
 				FBB6AEFBD16C795683010063 /* UserProfile+Extensions.swift in Sources */,
 				DCFC1898B044436D8D3C036B /* WeightHistoryView.swift in Sources */,
@@ -440,6 +473,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		887DBBABABAF4FF3D2ADA664 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082613DD233C9A81F6DB0398 /* Assets.xcassets in Resources */,
+				29A2349B0F040B359A9DEF59 /* dashboard-coach-prompt.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		5EA299289A2C8A65265C8770 /* PBXTargetDependency */ = {
@@ -500,9 +545,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RNTXS35JU6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -591,9 +637,10 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RNTXS35JU6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
