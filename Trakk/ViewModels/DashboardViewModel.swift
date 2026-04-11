@@ -108,6 +108,13 @@ final class DashboardViewModel: ObservableObject {
         }
     }
 
+    // MARK: - Food Entry Management
+
+    func deleteEntry(_ entry: FoodEntry) {
+        coreData.deleteFoodEntry(entry)
+        loadFromCoreData()
+    }
+
     private static func currentClockString() -> String {
         let now = Date()
         let cal = Calendar.current

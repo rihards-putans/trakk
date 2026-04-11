@@ -8,6 +8,8 @@ struct DashboardView: View {
     @State private var showChat = false
     @State private var showTextLog = false
     @State private var showBarcodeScanner = false
+    @State private var showCalorieHistory = false
+    @State private var showSOS = false
 
     var body: some View {
         NavigationStack {
@@ -18,13 +20,16 @@ struct DashboardView: View {
                         // Header
                         headerSection
 
-                        // Calorie ring card
-                        CalorieRingView(
-                            eaten: vm.todayEaten,
-                            burned: vm.todayBurned,
-                            target: vm.calorieTarget,
-                            remaining: vm.caloriesRemaining
-                        )
+                        // Calorie ring card (tap for history)
+                        Button(action: { showCalorieHistory = true }) {
+                            CalorieRingView(
+                                eaten: vm.todayEaten,
+                                burned: vm.todayBurned,
+                                target: vm.calorieTarget,
+                                remaining: vm.caloriesRemaining
+                            )
+                        }
+                        .buttonStyle(.plain)
 
                         // Metric cards
                         MetricCardsView(
@@ -37,10 +42,18 @@ struct DashboardView: View {
                             onWeightTap: { showWeightHistory = true }
                         )
 
+                        // Training day
+                        TrainingDayView(
+                            lastWorkoutDate: vm.lastWorkoutDate,
+                            gymIntervalDays: vm.gymIntervalDays,
+                            onMarkTraining: { Task { await vm.refresh() } }
+                        )
+
                         // Food log preview
                         FoodLogPreviewView(
                             entries: vm.recentFoodEntries,
-                            onSeeAll: { showFoodLog = true }
+                            onSeeAll: { showFoodLog = true },
+                            onDelete: { vm.deleteEntry($0) }
                         )
 
                         // Coach insight
@@ -60,10 +73,12 @@ struct DashboardView: View {
                 // Floating action button
                 FABView(
                     onBarcodeScan: { showBarcodeScanner = true },
-                    onTextLog: { showTextLog = true }
+                    onTextLog: { showTextLog = true },
+                    onSOS: { showSOS = true }
                 )
             }
             .background(Theme.background.ignoresSafeArea())
+            .refreshable { await vm.refresh() }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -83,6 +98,9 @@ struct DashboardView: View {
             .navigationDestination(isPresented: $showSettings) {
                 SettingsView()
             }
+            .navigationDestination(isPresented: $showCalorieHistory) {
+                CalorieHistoryView()
+            }
             // Sheet destinations
             .sheet(isPresented: $showChat) {
                 ChatSheetView()
@@ -94,14 +112,39 @@ struct DashboardView: View {
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.visible)
             }
+            // SOS sheet
+            .sheet(isPresented: $showSOS) {
+                SOSView()
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
+            }
             // Full-screen cover
             .fullScreenCover(isPresented: $showBarcodeScanner) {
                 BarcodeScannerView()
+            }
+            .onChange(of: showBarcodeScanner) { _, showing in
+                if !showing { Task { await vm.refresh(); await vm.loadCoachInsight() } }
+            }
+            .onChange(of: showChat) { _, showing in
+                if !showing { Task { await vm.refresh(); await vm.loadCoachInsight() } }
+            }
+            .onChange(of: showTextLog) { _, showing in
+                if !showing { Task { await vm.refresh(); await vm.loadCoachInsight() } }
+            }
+            .onChange(of: showFoodLog) { _, showing in
+                if !showing { Task { await vm.refresh() } }
             }
         }
         .task {
             await vm.refresh()
             await vm.loadCoachInsight()
+        }
+        .task(id: "healthkit-timer") {
+            // Refresh HealthKit data every 60 seconds
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(60))
+                await vm.refresh()
+            }
         }
     }
 
