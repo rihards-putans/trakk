@@ -1,50 +1,67 @@
 dimensions:
   hard_rule:
     pass:
-      - output: "Hydrate and head to bed — tomorrow's protein starts at breakfast."
+      - input: {clock_time: "23:30", workout: "rest day", todayEaten: 1200, calorieTarget: 2000, todayProtein: 80, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+        output: "Hydrate and head to bed — tomorrow's protein starts at breakfast."
         rationale: "No food-now recommendation at 23:30; future-tense only."
-      - output: "Your day rolled over at midnight — that 0 kcal is not a deficit. Sleep first."
+      - input: {clock_time: "00:30", workout: "rest day", todayEaten: 0, calorieTarget: 2000, todayProtein: 0, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
+        output: "Your day rolled over at midnight — that 0 kcal is not a deficit. Sleep first."
         rationale: "No food-now recommendation; addresses the midnight rollover edge case."
-      - output: "You're under today but it's past bedtime. Lock in sleep — tomorrow starts fresh."
+      - input: {clock_time: "23:00", workout: "trained today", todayEaten: 1900, calorieTarget: 2000, todayProtein: 140, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 6, todayBurned: 420}
+        output: "You're under today but it's past bedtime. Lock in sleep — tomorrow starts fresh."
         rationale: "No food-now recommendation at 23:00."
     fail:
-      - output: "A casein shake before bed could help overnight recovery."
+      - input: {clock_time: "22:30", workout: "trained today", todayEaten: 1700, calorieTarget: 2200, todayProtein: 60, proteinTarget: 160, currentWeight: 78.9, goalWeight: 71, streak: 3, todayBurned: 500}
+        output: "A casein shake before bed could help overnight recovery."
         rationale: "Recommends eating after 22:00."
-      - output: "Consider a small high-protein snack if you're hungry before bed."
+      - input: {clock_time: "23:00", workout: "rest day", todayEaten: 1200, calorieTarget: 2000, todayProtein: 70, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+        output: "Consider a small high-protein snack if you're hungry before bed."
         rationale: "Recommends eating after 22:00."
-      - output: "Grab another protein shake — you're 60g short of target."
+      - input: {clock_time: "23:30", workout: "rest day", todayEaten: 1400, calorieTarget: 2000, todayProtein: 90, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 2, todayBurned: 0}
+        output: "Grab another protein shake — you're 60g short of target."
         rationale: "Recommends eating at 23:30 regardless of protein gap."
 
   numerical_accuracy:
     pass:
-      - output: "You're 180 kcal under your 2000 target — solid room for one more meal."
-        rationale: "Both numbers match the dashboard state exactly (input had target 2000, eaten 1820)."
-      - output: "Trained today with 420 active kcal burned — your 2200 target accounts for it."
+      - input: {clock_time: "19:00", workout: "rest day", todayEaten: 1820, calorieTarget: 2000, todayProtein: 120, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
+        output: "You're 180 kcal under your 2000 target — solid room for one more meal."
+        rationale: "Both numbers match the dashboard state exactly (input target 2000, eaten 1820, so 180 remaining)."
+      - input: {clock_time: "18:00", workout: "trained today", todayEaten: 1800, calorieTarget: 2200, todayProtein: 130, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 420}
+        output: "Trained today with 420 active kcal burned — your 2200 target accounts for it."
         rationale: "All three numbers match input exactly."
-      - output: "You hit your 1800 target on the nose — 150g protein locked in."
+      - input: {clock_time: "20:00", workout: "rest day", todayEaten: 1800, calorieTarget: 1800, todayProtein: 150, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 8, todayBurned: 0}
+        output: "You hit your 1800 target on the nose — 150g protein locked in."
         rationale: "Both numbers match."
     fail:
-      - output: "You're 500 kcal under your 1800 target."
-        rationale: "Target hallucinated — input target is 2000."
-      - output: "Your 300 kcal active burn today plus 2500 target gives plenty of room."
-        rationale: "Both numbers invented; input had 420 and 2200."
-      - output: "At 75kg you're 4kg from your 71 goal."
-        rationale: "Current weight hallucinated — input is 78.9."
+      - input: {clock_time: "16:00", workout: "rest day", todayEaten: 1500, calorieTarget: 2000, todayProtein: 80, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 0}
+        output: "You're 500 kcal under your 1800 target."
+        rationale: "Target hallucinated — input target is 2000, not 1800."
+      - input: {clock_time: "18:00", workout: "trained today", todayEaten: 1700, calorieTarget: 2200, todayProtein: 100, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 4, todayBurned: 420}
+        output: "Your 300 kcal active burn today plus 2500 target gives plenty of room."
+        rationale: "Both numbers invented; input had todayBurned 420 and calorieTarget 2200."
+      - input: {clock_time: "15:00", workout: "rest day", todayEaten: 900, calorieTarget: 1800, todayProtein: 60, proteinTarget: 140, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
+        output: "At 75kg you're 4kg from your 71 goal."
+        rationale: "Current weight hallucinated — input currentWeight is 78.9, not 75."
 
   signal_value:
     scale:
       - score: 1
+        input: {clock_time: "12:00", workout: "rest day", todayEaten: 800, calorieTarget: 2000, todayProtein: 60, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 0}
         output: "You're on the path to your 71 kg goal. Keep it up!"
         rationale: "Pure restatement of the goal weight shown on the dashboard."
       - score: 3
+        input: {clock_time: "14:00", workout: "rest day", todayEaten: 1100, calorieTarget: 2000, todayProtein: 80, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 9, todayBurned: 0}
         output: "Your streak is going strong. Trust the process."
         rationale: "Mild encouragement but tells the user nothing the streak widget doesn't."
       - score: 5
+        input: {clock_time: "15:00", workout: "rest day", todayEaten: 1300, calorieTarget: 2000, todayProtein: 110, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 6, todayBurned: 0}
         output: "You're under target and protein looks good. Solid so far."
         rationale: "Accurate but not tied to any specific observation about today."
       - score: 7
+        input: {clock_time: "17:00", workout: "trained today", todayEaten: 1700, calorieTarget: 2200, todayProtein: 110, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 5, todayBurned: 480}
         output: "Trained today and sitting 500 kcal under — that's intentional, keep protein priority at dinner."
         rationale: "Ties workout + deficit + next-action into one observation."
       - score: 9
+        input: {clock_time: "20:15", workout: "trained today", todayEaten: 2020, calorieTarget: 2200, todayProtein: 140, proteinTarget: 150, currentWeight: 78.9, goalWeight: 71, streak: 6, todayBurned: 440}
         output: "You're 180 under and trained today — that shake 40 min ago was exactly right. Lock sleep in now."
         rationale: "Specific to time + workout + last food log event; names the next action."
