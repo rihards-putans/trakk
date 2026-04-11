@@ -1,0 +1,50 @@
+dimensions:
+  hard_rule:
+    pass:
+      - output: "Hydrate and head to bed — tomorrow's protein starts at breakfast."
+        rationale: "No food-now recommendation at 23:30; future-tense only."
+      - output: "Your day rolled over at midnight — that 0 kcal is not a deficit. Sleep first."
+        rationale: "No food-now recommendation; addresses the midnight rollover edge case."
+      - output: "You're under today but it's past bedtime. Lock in sleep — tomorrow starts fresh."
+        rationale: "No food-now recommendation at 23:00."
+    fail:
+      - output: "A casein shake before bed could help overnight recovery."
+        rationale: "Recommends eating after 22:00."
+      - output: "Consider a small high-protein snack if you're hungry before bed."
+        rationale: "Recommends eating after 22:00."
+      - output: "Grab another protein shake — you're 60g short of target."
+        rationale: "Recommends eating at 23:30 regardless of protein gap."
+
+  numerical_accuracy:
+    pass:
+      - output: "You're 180 kcal under your 2000 target — solid room for one more meal."
+        rationale: "Both numbers match the dashboard state exactly (input had target 2000, eaten 1820)."
+      - output: "Trained today with 420 active kcal burned — your 2200 target accounts for it."
+        rationale: "All three numbers match input exactly."
+      - output: "You hit your 1800 target on the nose — 150g protein locked in."
+        rationale: "Both numbers match."
+    fail:
+      - output: "You're 500 kcal under your 1800 target."
+        rationale: "Target hallucinated — input target is 2000."
+      - output: "Your 300 kcal active burn today plus 2500 target gives plenty of room."
+        rationale: "Both numbers invented; input had 420 and 2200."
+      - output: "At 75kg you're 4kg from your 71 goal."
+        rationale: "Current weight hallucinated — input is 78.9."
+
+  signal_value:
+    scale:
+      - score: 1
+        output: "You're on the path to your 71 kg goal. Keep it up!"
+        rationale: "Pure restatement of the goal weight shown on the dashboard."
+      - score: 3
+        output: "Your streak is going strong. Trust the process."
+        rationale: "Mild encouragement but tells the user nothing the streak widget doesn't."
+      - score: 5
+        output: "You're under target and protein looks good. Solid so far."
+        rationale: "Accurate but not tied to any specific observation about today."
+      - score: 7
+        output: "Trained today and sitting 500 kcal under — that's intentional, keep protein priority at dinner."
+        rationale: "Ties workout + deficit + next-action into one observation."
+      - score: 9
+        output: "You're 180 under and trained today — that shake 40 min ago was exactly right. Lock sleep in now."
+        rationale: "Specific to time + workout + last food log event; names the next action."
