@@ -1,6 +1,6 @@
 # Trakk
 
-A native iOS weight-loss companion that unifies Apple Health, barcode scanning, and an AI coach. Built for my own daily use during a cut from 78.9 kg toward a 70–72 kg target.
+A native iOS weight-loss companion that unifies Apple Health, barcode scanning, and an AI coach. Built for my own daily use.
 
 ## Why this exists
 
